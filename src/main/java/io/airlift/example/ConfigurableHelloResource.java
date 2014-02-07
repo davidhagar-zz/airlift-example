@@ -14,8 +14,6 @@ import javax.ws.rs.Produces;
 @Path("/v2/hello")
 public class ConfigurableHelloResource
 {
-    private static final Logger log = Logger.get(ConfigurableHelloResource.class);
-
     public static class HelloContainer
     {
         private final String salutations;
@@ -38,7 +36,6 @@ public class ConfigurableHelloResource
     public ConfigurableHelloResource(HelloConfiguration config)
     {
         hello = config.getHello();
-        log.info("Using hello text %s", hello);
     }
 
     @GET

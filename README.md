@@ -6,6 +6,8 @@ Simple usage of:
 * Dependency injection (via guice)
 * Configuration
 * RESTful JSON calls
+* Logging
+* Unit tests
 
 The project was generated using the [maven] archetype generator:
 
@@ -67,7 +69,7 @@ $ curl localhost:8080/v2/hello/david
 
 Illustrate unbound URI
 ```sh
-$ curl localhost:8080/v3/hello/david
+$ curl localhost:8080/v1.1/hello/david
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
@@ -75,7 +77,7 @@ $ curl localhost:8080/v3/hello/david
 </head>
 <body>
 <h2>HTTP ERROR: 404</h2>
-<p>Problem accessing /v3/hello/david. Reason:
+<p>Problem accessing /v1.1/hello/david. Reason:
 <pre>    Not Found</pre></p>
 <hr /><i><small>Powered by Jetty://</small></i>
 </body>

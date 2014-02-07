@@ -16,7 +16,8 @@ public class HelloConfiguration
 
     @Config("hello.text")
     @ConfigDescription("Phrase that means hello")
-    public void setHello(String hello) {
+    public HelloConfiguration setHello(String hello) {
         this.hello = hello;
+        return this;
     }
 }
