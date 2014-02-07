@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 @Path("/v1/hello")
 public class HelloResource
 {
-    public class HelloContainer
+    public static class HelloContainer
     {
         private final String name;
 

@@ -16,7 +16,7 @@ public class ConfigurableHelloResource
 {
     private static final Logger log = Logger.get(ConfigurableHelloResource.class);
 
-    public class HelloContainer
+    public static class HelloContainer
     {
         private final String salutations;
 
