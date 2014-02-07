@@ -1,48 +1,72 @@
-This is a simple usage of the airlift.io platform meant to be used as an example
+This is a simple usage of the [airlift.io] platform meant to be used as an example
 of various best practices.
 
 Simple usage of:
 
-Dependency injection (via guice)
-Configuration
-RESTful JSON calls
+* Dependency injection (via guice)
+* Configuration
+* RESTful JSON calls
 
+The project was generated using the [maven] archetype generator:
 
-
-The project was generated using the maven archetype generator:
-
+```sh
 mvn archetype:generate -U -B \
   -DarchetypeGroupId=io.airlift \
   -DarchetypeArtifactId=skeleton-server-archetype \
   -DarchetypeVersion=0.84 \
-  -DgroupId=io.arilift \
+  -DgroupId=io.airlift \
   -DartifactId=service-monitor \
   -Dpackage=com.tellapart.monitoring
+```
 
+Package
+------
 
-It can be packaged with: mvn package
+This project can be packaged with [maven]:
 
-After packaging, to run the sample server, do the following from the project
+```sh
+mvn package
+```
+
+Run
+-----
+
+After packaging, to run the example server, do the following from the project
 root directory:
 
 
-######################################
+```sh
 cd target
 tar xvzf airlift-example-1.0-SNAPSHOT.tar.gz
 cd airlift-example-1.0-SNAPSHOT
-cp -r ../../etc .
+ln -s ../../etc
 touch etc/jvm.config
 bin/launcher run
-######################################
+```
+
+Test
+-----
 
 In a separate terminal window, the following commands should run as follows:
+
+Exercise the HelloResource
+```sh
 $ curl localhost:8080/v1/hello/david
 {"name":"david"}
+$ curl localhost:8080/v1/hello/david?pretty
+{
+   "name":"david"
+}
+```
 
-
+Exercise the ConfigurableHelloResource
+```sh
 $ curl localhost:8080/v2/hello/david
 {"salutations":"Hola, david"}
+```
 
+Illustrate unbound URI
+```sh
 $ curl localhost:8080/v3/hello/david
 <html>
 <head>
@@ -56,6 +80,7 @@ $ curl localhost:8080/v3/hello/david
 <hr /><i><small>Powered by Jetty://</small></i>
 </body>
 </html>
+```
 
-
-
+[maven]:http://maven.apache.org/
+[airlift.io]:https://github.com/airlift/airlift
