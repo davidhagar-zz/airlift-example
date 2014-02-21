@@ -1,0 +1,9 @@
+Package: airlift-example
+Version: [[version]]
+Section: misc
+Priority: optional
+Architecture: all
+Depends: openjdk-7-jdk
+Maintainer: David Hagar <davidh@tellapart.com>
+Description: sample airlift project
+Distribution: development
