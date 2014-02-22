@@ -170,7 +170,7 @@
                             <goal>jdeb</goal>
                         </goals>
                         <configuration>
-                            <deb>target/${artifactId}.deb</deb>
+                            <deb>target/${project.artifactId}.deb</deb>
                             <dataSet>
                                 <!-- Tarball example -->
                                 <data>
@@ -179,7 +179,7 @@
                                     <mapper>
                                         <type>perm</type>
                                         <strip>1</strip>
-                                        <prefix>/opt/tellapart/${project.build.finalName}-${build-number}</prefix>
+                                        <prefix>/opt/tellapart/${project.build.finalName}</prefix>
                                         <user>tellapart</user>
                                         <group>tellapart</group>
                                         <filemode>0700</filemode>
