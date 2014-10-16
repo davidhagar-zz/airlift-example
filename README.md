@@ -8,6 +8,7 @@ Simple usage of:
 * RESTful JSON calls
 * Logging
 * Unit tests
+* Other things, by request!
 
 The project was generated using the [maven] archetype generator:
 
