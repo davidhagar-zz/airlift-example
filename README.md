@@ -68,6 +68,12 @@ $ curl localhost:8080/v2/hello/david
 {"salutations":"Hola, david"}
 ```
 
+Exercise the JsonConsumingResource
+```sh
+curl localhost:8080/v1/helloJson -H'Content-Type: application/json' -d '{ "firstName" : "David", "lastName" : "Hagar" }'
+{"greeting":"Hello David Hagar"}
+```
+
 Illustrate unbound URI
 ```sh
 $ curl localhost:8080/v1.1/hello/david

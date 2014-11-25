@@ -17,6 +17,7 @@ public class MainModule
         binder.bind(HelloResource.class).in(Scopes.SINGLETON);
         binder.bind(ConfigurableHelloResource.class).in(Scopes.SINGLETON);
         binder.bind(LoggingHelloResource.class).in(Scopes.SINGLETON);
+        binder.bind(JsonConsumingResource.class).in(Scopes.SINGLETON);
         bindConfig(binder).to(HelloConfiguration.class);
     }
 }

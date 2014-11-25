@@ -1,9 +1,9 @@
 package io.airlift.example;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
-import io.airlift.http.client.FullJsonResponseHandler;
 import io.airlift.http.client.ResponseHandler;
 import io.airlift.json.JsonCodec;
 import io.airlift.log.Logger;
@@ -13,7 +13,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
 import static io.airlift.http.client.FullJsonResponseHandler.createFullJsonResponseHandler;
@@ -28,7 +27,8 @@ public class LoggingHelloResource
     {
         private final String salutations;
 
-        public HelloContainer(String salutations)
+        @JsonCreator
+        public HelloContainer(@JsonProperty String salutations)
         {
             this.salutations = salutations;
         }
